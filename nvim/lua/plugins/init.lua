@@ -1,5 +1,6 @@
 local lspconfig = require "lspconfig"
 vim.opt.termguicolors = true
+
 return {
   {
     "stevearc/conform.nvim",
@@ -11,13 +12,17 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
+      lspconfig.clangd.setup {
+        on_attach = function(client, bufnr) end,
+      }
+
       lspconfig.pyright.setup {
         on_attach = function(client, bufnr)
           -- Enable null-ls for the current buffer
         end,
         settings = {
           python = {
-            pythonPath = "/home/fall/anaconda3/bin/python",
+            pythonPath = "/home/fall3n/anaconda3/bin/python",
           },
         },
       }

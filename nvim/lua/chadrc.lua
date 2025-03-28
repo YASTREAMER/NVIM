@@ -10,34 +10,28 @@ nvim_tree.setup {
 }
 ---@type ChadrcConfig
 local M = {}
+
+M.nvdash = {
+  load_on_startup = true,
+
+}
+
 M.ui = {
 
   telescope = { style = "bordered" },
 
   statusline = {
-    theme = "default", -- default/vscode/vscode_colored/minimal
+    theme = "minimal", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
     separator_style = "round",
     order = nil,
     modules = nil,
   },
-  nvdash = {
 
-    load_on_startup = true,
-
-    header = {
-      "           ▄ ▄                   ",
-      "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
-      "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
-      "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
-      "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
-      "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
-      "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
-      "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
-      "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
-    },
-  },
+  -- nvdash = {
+  --
+  -- },
 
   nvim_tree.setup {
     view = {
@@ -47,7 +41,7 @@ M.ui = {
 }
 
 M.base46 = {
-  theme = "onedark",
+  theme = "chadracula-evondev",
   transparency = true,
   -- hl_override = {
   -- 	Comment = { italic = true },

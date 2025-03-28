@@ -1,0 +1,36 @@
+-- lazy.nvim
+return {
+  "folke/noice.nvim",
+  event = "VeryLazy",
+  opts = {
+    messages = {
+      -- Disable notifications for various events
+      cmdline = false, -- Disable notifications for command-line events (e.g., writes)
+      undo = false, -- Disable notifications for undo actions
+      redo = false, -- Disable notifications for redo actions
+      write = false, -- Disable notifications for write actions
+    },
+    -- add any options here
+  },
+  dependencies = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+  },
+  require("noice").setup {
+    routes = {
+      {
+        filter = {
+          event = "msg_show",
+          kind = "",
+          find = "written",
+          changes =""
+        },
+        opts = { skip = true },
+      },
+    },
+  },
+}
